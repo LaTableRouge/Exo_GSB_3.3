@@ -61,6 +61,26 @@ class PdoGsb{
 		return $ligne;
 	}
 
+	
+	//  Retourne les informations d'un admin
+    public function getInfosAdmin($login, $mdp){
+		$req = "select admin.id as id, admin.nom as nom, admin.prenom as prenom from admin 
+		where admin.login='$login' and admin.mdp='$mdp'";
+		$rs = PdoGsb::$monPdo->query($req);
+		$ligne = $rs->fetch();
+		return $ligne;
+	}
+
+    
+     	//  Retourne les informations d'un comptable
+    public function getInfosComptable($login, $mdp){
+		$req = "select comptable.id as id, comptable.nom as nom, comptable.prenom as prenom from comptable 
+		where comptable.login='$login' and comptable.mdp='$mdp'";
+		$rs = PdoGsb::$monPdo->query($req);
+		$ligne = $rs->fetch();
+		return $ligne;
+	}
+	
 /**
  * Retourne sous forme d'un tableau associatif toutes les lignes de frais hors forfait
  * concernées par les deux arguments
