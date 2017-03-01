@@ -1,6 +1,6 @@
 <footer class="footer" style="padding-top: 60px;">
   <div class="container well">
-    <p class="text-muted">Copyright &copy; 2015 GSB.</p>
+    <p class="text-muted">Copyright &copy; 2017 GSB.</p>
   </div>
 </footer>
 
