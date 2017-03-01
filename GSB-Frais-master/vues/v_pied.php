@@ -1,6 +1,6 @@
 <footer class="footer" style="padding-top: 60px;">
   <div class="container well">
-    <p class="text-muted">Copyright &copy; 2015 GSB. Développé par Maxence Rose.</p>
+    <p class="text-muted">Copyright &copy; 2015 GSB.</p>
   </div>
 </footer>
 
