@@ -45,7 +45,7 @@ function dateFrancaisVersAnglais($maDate){
 	return date('Y-m-d',mktime(0,0,0,$mois,$jour,$annee));
 }
 /**
- * Transforme une date au format format anglais aaaa-mm-jj vers le format français jj/mm/aaaa 
+ * Transforme une date au format anglais aaaa-mm-jj vers le format français jj/mm/aaaa 
  
  * @param $madate au format  aaaa-mm-jj
  * @return la date au format format français jj/mm/aaaa
@@ -78,7 +78,6 @@ function getMois($date){
 */
 function estEntierPositif($valeur) {
 	return preg_match("/[^0-9]/", $valeur) == 0;
-	
 }
 
 /**
@@ -121,8 +120,8 @@ function estDateValide($date){
 	$dateOK = true;
 	if (count($tabDate) != 3) {
 	    $dateOK = false;
-    }
-    else {
+   	}
+    	else {
 		if (!estTableauEntiers($tabDate)) {
 			$dateOK = false;
 		}
@@ -131,7 +130,7 @@ function estDateValide($date){
 				$dateOK = false;
 			}
 		}
-    }
+    	}
 	return $dateOK;
 }
 
@@ -173,10 +172,11 @@ function valideInfosFrais($dateFrais,$libelle,$montant){
 	if($montant == ""){
 		ajouterErreur("Le champ montant ne peut pas être vide");
 	}
-	else
+	else{
 		if( !is_numeric($montant) ){
 			ajouterErreur("Le champ montant doit être numérique");
 		}
+	}	
 }
 /**
  * Ajoute le libellé d'une erreur au tableau des erreurs 
@@ -184,10 +184,10 @@ function valideInfosFrais($dateFrais,$libelle,$montant){
  * @param $msg : le libellé de l'erreur 
  */
 function ajouterErreur($msg){
-   if (! isset($_REQUEST['erreurs'])){
-      $_REQUEST['erreurs']=array();
+	if (! isset($_REQUEST['erreurs'])){
+      		$_REQUEST['erreurs']=array();
 	} 
-   $_REQUEST['erreurs'][]=$msg;
+	$_REQUEST['erreurs'][]=$msg;
 }
 /**
  * Retoune le nombre de lignes du tableau des erreurs 
@@ -195,11 +195,11 @@ function ajouterErreur($msg){
  * @return le nombre d'erreurs
  */
 function nbErreurs(){
-   if (!isset($_REQUEST['erreurs'])){
-	   return 0;
+   	if (!isset($_REQUEST['erreurs'])){
+	   	return 0;
 	}
 	else{
-	   return count($_REQUEST['erreurs']);
+	   	return count($_REQUEST['erreurs']);
 	}
 }
 ?>
